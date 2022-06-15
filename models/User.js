@@ -1,9 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connections.js');
+require('dotenv').config();
 
 class User extends Model {
     //bcrypt stuff
+    checkPassword(LoginPw) {
+        return bcrypt.compareSync(LoginPw, this.password);
+    }
 }
 
 User.init(
@@ -46,11 +50,11 @@ User.init(
         hooks: {
             beforeCreate: async (newUserData) => {
                 // Creates a new encrypted PW using bcrypt
-                newUserData.password = await bcrypt.hash(newUserData.password, 10)
+                newUserData.password = await bcrypt.hash(newUserData.password, process.env.BCRYPT_KEY)
                 return newUserData
             },
             beforeUpdate: async (updatedUserData) => {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, process.env.BCRYPT_KEY);
                 return updatedUserData
             }
         },
