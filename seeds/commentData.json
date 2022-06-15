@@ -1,0 +1,11 @@
+[
+    {
+        "comment_body": "This bug is easy to fix"
+    },
+    {
+        "comment_body": "This bug is difficult"
+    },
+    {
+        "comment_body": "Have you tried resetting your VSCode"
+    }
+]

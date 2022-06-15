@@ -1,0 +1,37 @@
+[
+    {
+        "first_name": "Brad",
+        "last_name": "Nagel",
+        "email": "testemail1@gmail.com",
+        "password": "password1",
+        "admin": "true"
+    },
+    {
+        "first_name": "Max",
+        "last_name": "Shaw",
+        "email": "testemail2@gmail.com",
+        "password": "password2",
+        "admin": "true"
+    },
+    {
+        "first_name": "Salvador",
+        "last_name": "Flores",
+        "email": "testemail3@gmail.com",
+        "password": "password3",
+        "admin": "true"
+    },
+    {
+        "first_name": "Ivan",
+        "last_name": "Goya",
+        "email": "testemail4@gmail.com",
+        "password": "password4",
+        "admin": "true"
+    },
+    {
+        "first_name": "Drew",
+        "last_name": "Kempen",
+        "email": "testemail5@gmail.com",
+        "password": "password5",
+        "admin": "true"
+    }
+]
