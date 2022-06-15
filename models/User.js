@@ -5,6 +5,9 @@ require('dotenv').config();
 
 class User extends Model {
     //bcrypt stuff
+    checkPassword(LoginPw) {
+        return bcrypt.compareSync(LoginPw, this.password);
+    }
 }
 
 User.init(
