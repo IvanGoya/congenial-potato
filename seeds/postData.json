@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Bug1",
+        "post_body": "Test text",
+        "completed": "false"
+    },
+    {
+        "title": "Bug2",
+        "post_body": "Testing",
+        "completed": "false"
+    },
+    {
+        "title": "Bug3",
+        "post_body": "Test 123",
+        "completed": "false"
+    }
+]
