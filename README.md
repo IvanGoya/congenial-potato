@@ -29,11 +29,11 @@ You use it by either running it on the web or locally using "npm start"
 
 ## Credits
 
-G3TSN1P3D, IvanGoya, dkempen98, Maxthemillian52, bnagel50.
+[G3TSN1P3D](https://github.com/G3TSN1P3D/), [IvanGoya](https://github.com/IvanGoya/), [dkempen98](https://github.com/dkempen98), [Maxthemillian52](https://github.com/Maxthemilian52), [bnagel50](https://github.com/bnagel50).
 
 ## License
 
-MIT
+MIT License
 
 ## Features
 
