@@ -47,11 +47,11 @@ User.init(
         hooks: {
             beforeCreate: async (newUserData) => {
                 // Creates a new encrypted PW using bcrypt
-                newUserData.password = await bcrypt.hash(newUserData.password,)
+                newUserData.password = await bcrypt.hash(newUserData.password, process.env.BCRYPT_KEY)
                 return newUserData
             },
             beforeUpdate: async (updatedUserData) => {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password,);
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, process.env.BCRYPT_KEY);
                 return updatedUserData
             }
         },
