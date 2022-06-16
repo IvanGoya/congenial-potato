@@ -2,16 +2,19 @@
     {
         "title": "Bug1",
         "post_body": "Test text",
-        "completed": "false"
+        "completed": "false",
+        "user_id": 1
     },
     {
         "title": "Bug2",
         "post_body": "Testing",
-        "completed": "false"
+        "completed": "false",
+        "user_id": 2
     },
     {
         "title": "Bug3",
         "post_body": "Test 123",
-        "completed": "false"
+        "completed": "false",
+        "user_id": 3
     }
 ]
