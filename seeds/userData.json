@@ -33,5 +33,18 @@
         "email": "testemail5@gmail.com",
         "password": "password5",
         "admin": "true"
+    },
+    {    "first_name": "John",
+        "last_name": "Smith",
+        "email": "testemail6@gmail.com",
+        "password": "password6",
+        "admin": "false"
+    },
+    {
+        "first_name": "Walter",
+        "last_name": "White",
+        "email": "testemail7@gmail.com",
+        "password": "password7",
+        "admin": "false"
     }
 ]

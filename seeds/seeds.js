@@ -19,25 +19,25 @@ const seedDatabase = async () => {
     //     })
     // }
 
-    await Comment.create(commentData, {
+    await Post.bulkCreate(postData, {
         returning: true
     });
-
-    for (const comment of commentData) {
-        await Comment.create({
-            ...comment
-        })
-    }
-
-    await Post.create(postData, {
-        returning: true
-    });
-
-    for (const post of postData) {
-        await Post.create({
-            ...post
-        });
-    }
+    
+    // for (const comment of commentData) {
+        //     await Comment.create({
+            //         ...comment
+            //     })
+            // }
+            
+            await Comment.bulkCreate(commentData, {
+                returning: true
+            });
+            
+    // for (const post of postData) {
+    //     await Post.create({
+    //         ...post
+    //     });
+    // }
 
     process.exit(0);
 };
