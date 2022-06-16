@@ -2,7 +2,8 @@ const sequelize = require('../config/connections.js');
 const userData = require('./userData.json')
 const postData = require('./postData.json')
 const commentData = require('./commentData.json')
-const { User, Comment, Post}  = require('../models')
+const kanbanData = require('./kanban.json')
+const { User, Comment, Post, Kanban}  = require('../models')
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true});
@@ -38,6 +39,10 @@ const seedDatabase = async () => {
     //         ...post
     //     });
     // }
+
+    await Kanban.bulkCreate(kanbanData, {
+        returning: true
+    });
 
     process.exit(0);
 };
