@@ -7,17 +7,20 @@ router.get('/', async (req, res) => {
     const bugData = await Post.findAll({
       include: [
         {
-          model: User
+          model: User,
+          attributes: ['first_name', 'last_name']
         }
         // {
         //   model: Comment
         // }
       ]
     })
-    const bugs = bugData.map((bug) => {
+    console.log(bugData);
+    console.log(bugData[0].dataValues.user)
+    const bugs = bugData.map((bug) => 
       bug.get({ plain: true })
-    })
-    console.log(`OBJECT: ${bugs}`);
+    )
+    console.log(bugs);
 
     res.render('homepage', {
       bugs,
