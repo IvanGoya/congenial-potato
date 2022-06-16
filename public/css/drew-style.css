@@ -1,0 +1,58 @@
+:root {
+    --first-color: #09814A;
+    --second-color: black;
+    --third-color: #8D918D;
+    --fourth-color: #3B8EA5;
+}
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-post {
+    background-color: var(--fourth-color);
+    min-height: 15rem;
+    margin: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 15rem;
+    max-width: 80rem;
+}
+
+.post-title {
+    min-height: 3rem;
+    background-color: var(--third-color);
+    width: 90%;
+    height: 30%;
+    margin: 1rem;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.post-body {
+    min-height: 3rem;
+    background-color: var(--third-color);
+    width: 90%;
+    height: 10rem;
+    margin: 0 1rem 1rem 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.post-text {
+    margin: .5rem
+}
+
+.title-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
