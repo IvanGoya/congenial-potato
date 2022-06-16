@@ -2,13 +2,39 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Post, Comment } = require('../models');
 
+router.get('/', async (req, res) => {
+  try {
+    const bugData = await Post.findAll({
+      include: [
+        {
+          model: User
+        }
+        // {
+        //   model: Comment
+        // }
+      ]
+    })
+    const bugs = bugData.map((bug) => {
+      bug.get({ plain: true })
+    })
+    console.log(`OBJECT: ${bugs}`);
+
+    res.render('homepage', {
+      bugs,
+      logged_in: req.session.logged_in
+    })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 
 router.get('/user/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
       include: [
         {
-          model: user,
+          model: User,
           attributes: ['name'],
         },
       ],
@@ -49,7 +75,7 @@ router.get('/post/:id', async (req,res) => {
   try{
     const postData = await Post.findByPk(req.params.id, {
       include: [User, {
-        model: comment,
+        model: 'comment',
         include: [User]
       }]
     })
