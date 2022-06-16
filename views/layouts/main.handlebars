@@ -5,40 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Congenial Potato</title>
-  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
+  <header>
+        <h1>Ex-Terminator</h1>
+  </header>
+  <section class="nav">
+        <h2>Create Post</h2>
+        <h2>My Posts</h2>
+        <h2>Boards</h2>
+  </section>
 
-        <a href="/">Congenial Potato!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+<script src=""></script>
 </body>
 
 </html>
