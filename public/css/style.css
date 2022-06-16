@@ -1,0 +1,99 @@
+:root {
+    --first-color: #09814A;
+    --second-color: black;
+    --third-color: #8D918D;
+    --fourth-color: #3B8EA5;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: var(--first-color);
+}
+
+header {
+    width: 100%;
+    background-color: var(--third-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 4rem;
+    border-bottom: var(--second-color) solid;
+}
+
+h1 {
+    color: var(--second-color);
+}
+
+.blend {
+    background: none;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-form {
+    display: flex;
+    /* align-items: left; */
+    justify-content: center;
+    flex-direction: column;
+    color: var(--second-color);
+    background-color: var(--third-color);
+    margin: 1rem;
+    border: solid;
+    border-color: var(--second-color);
+    max-width: 18rem;
+    padding: 1rem;
+}
+
+.signup-form {
+    display: flex;
+    /* align-items: left; */
+    justify-content: center;
+    flex-direction: column;
+    color: var(--second-color);
+    background-color: var(--third-color);
+    border: solid;
+    border-color: var(--second-color);
+    max-width: 18rem;
+    padding: 1rem;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    border: none;
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / .3);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+.open-button {
+    background-color: var(--third-color);
+    font-weight: bold;
+    padding: 4px;
+    border: solid var(--second-color);
+}
+
+.open-button:hover {
+    background-color: var(--fourth-color);
+}
+
+.modal::backdrop {
+    background: black;
+    opacity: .3;
+}
