@@ -1,7 +1,8 @@
 :root {
-    --second-color: rgb(0, 0, 0);
-    --third-color: #f7685e;
-    --fourth-color: #d0dd5a;
+    --first-color: #a75513;
+    --second-color: black;
+    --third-color: rgb(75, 77, 218);
+    --fourth-color: #7c807c;
 }
 
 * {
@@ -14,7 +15,9 @@ html {
 }
 
 body {
-    background: linear-gradient(45deg, rgb(44, 73, 223), white);
+    /* background: linear-gradient(45deg, rgb(44, 73, 223), white); */
+    background-color: var(--fourth-color);
+    background-image: url(../img/asfalt-dark.png);
 }
 
 header {
@@ -28,6 +31,12 @@ header {
 
 h1 {
     color: var(--second-color);
+    background-color: var(--third-color);
+    padding: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 5px rgb(0 0 0 / .3);
     
 }
 
@@ -38,16 +47,18 @@ h1 {
     align-items: center;
     border: 5px;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     min-height: 2.5rem;
-    background-color: var(--third-color);
+    background-color: var(--first-color);
+    color: var(--second-color);
 }
 
 .nav h2:hover {
-    background-color: var(--fourth-color);
+    background-color: var(--third-color);
     border:10px;
     border-style: none;
-    border-radius: 8px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -124,3 +135,65 @@ h1 {
     opacity: .3;
 }
 
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-post {
+    background-color: var(--first-color);
+    background-image: url(../img/cross-stripes.png);
+    min-height: 15rem;
+    margin: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80%;
+    max-width: 80rem;
+}
+
+.post-title {
+    min-height: 3rem;
+    background-color: var(--second-color);
+    width: 90%;
+    height: 30%;
+    margin: 1rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: white;
+}
+
+.post-body {
+    min-height: 3rem;
+    background-color: var(--second-color);
+    width: 90%;
+    height: 10rem;
+    margin: 0 1rem 1rem 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.post-text {
+    margin: .5rem
+}
+
+.title-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-link {
+    color: white;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    color: var(--third-color)
+}
