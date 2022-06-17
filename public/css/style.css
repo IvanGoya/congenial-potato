@@ -96,7 +96,7 @@ button:hover {
 
 .logo {
     max-height: 150px;
-    background-color: var(--third-color);
+    /* background-color: var(--third-color); */
 }
 
 .blend {
@@ -124,6 +124,10 @@ button:hover {
     max-width: 18rem;
     padding: 1rem;
     border-radius: 5px;
+}
+
+.form-input {
+    color: black;
 }
 
 .signup-form {
