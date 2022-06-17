@@ -50,17 +50,3 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
-
-// Modal stuff
-
-const modal = document.querySelector('.modal')
-const openModal = document.querySelector('.open-button')
-const closeModal = document.querySelector('.close-button')
-
-openModal.addEventListener('click', () => {
-    modal.showModal()
-})
-
-closeModal.addEventListener('click', () => {
-    modal.close()
-})
