@@ -29,15 +29,31 @@ You use it by either running it on the web or locally using "npm start"
 
 ## Credits
 
-G3TSN1P3D, IvanGoya, dkempen98, Maxthemillian52, bnagel50.
+- [G3TSN1P3D](https://github.com/G3TSN1P3D/)
+- [IvanGoya](https://github.com/IvanGoya/)
+- [dkempen98](https://github.com/dkempen98)
+- [Maxthemillian52](https://github.com/Maxthemilian52)
+- [bnagel50](https://github.com/bnagel50)
 
 ## License
 
-MIT
+[MIT License](./LICENSE)
 
 ## Features
 
-css, html, handlebars, express, node, sequelize, mysql, js, bcrypt, express-session, dotenv, connect-session-sequelize, heroku.
+1. css
+1. html
+1. handlebars
+1. express
+1. node
+1. sequelize
+1. mysql
+1. js
+1. bcrypt
+1. express-session
+1. dotenv
+1. connect-session-sequelize
+1. heroku.
 
 ## How to Contribute
 

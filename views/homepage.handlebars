@@ -1,0 +1,20 @@
+  <div class="post-container">
+    {{#each bugs as |bug| }}
+    <section class="main-post">
+      <div class="post-title">
+        <h4 class="post-text title-text">
+          <a href="https://localhost:3001/post/{{{bug.id}}}" class="post-link">
+            {{bug.title}}
+          </a>
+        </h4>
+      </div>
+          </a>
+      <div class="post-body">
+        <p class="post-text">
+          {{bug.post_body}}
+      </p>
+      </div>
+    </section>
+  {{/each}}
+  </div>
+      <script src="/js/login.js"></script>

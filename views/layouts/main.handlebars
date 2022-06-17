@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congenial Potato</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <section class="nav">
+    <img src='/img/ant.png' class="logo">
+        </img>
+        <h1>
+        Ex-Terminator
+        </h1>
+        {{#if logged_in}}
+        {{else}}
+        <h2><a class='open-button nav-item'>Create Post</a></h2>
+        <h2> <a class="nav-item">Boards</a></h2>
+        <h2><a href="/logout" class="nav-item" id="logout">LogOut</a></h2>
+        <h2><a href="/login" class="nav-item">Log In</a></h2>
+        {{/if}}
+  </section>
+  {{{body}}}
+  <script src="/js/global.js"></script>
+</body>
+
+</html>

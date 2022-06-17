@@ -19,13 +19,10 @@ router.post("/", async (req, res) => {
 });
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({
-      where: {
-        username: req.body.username,
-      },
+    const user = await User.findOne({where: {email: req.body.email}
     });
     if (!user) {
-      res.status(400).json({ message: "User not found!" });
+      res.status(400).json({ message: "Email not found!" });
       return;
     }
     const validatePassword = user.checkPassword(req.body.password);
@@ -34,8 +31,8 @@ router.post("/login", async (req, res) => {
       return;
     }
     req.session.save(() => {
-      req.session.userId = newUser.id;
-      req.session.username = newUser.username;
+      req.session.userId = user.id;
+      req.session.email = user.email;
       req.session.loggedIn = true;
       res.json({ user, message: "You are logged in!" });
     });
