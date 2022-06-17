@@ -13,14 +13,14 @@
   <section class="nav">
     <img src='/img/ant.png' class="logo">
         </img>
-        <h1>
-        Ex-Terminator
+        <h1 class="title">
+        Exterminator
         </h1>
-        {{#if logged_in}}
-        {{else}}
+        {{#if loggedIn}}
         <h2><a class='open-button nav-item'>Create Post</a></h2>
         <h2> <a class="nav-item">Boards</a></h2>
         <h2><a href="/logout" class="nav-item" id="logout">LogOut</a></h2>
+        {{else}}
         <h2><a href="/login" class="nav-item">Log In</a></h2>
         {{/if}}
   </section>

@@ -4,12 +4,12 @@ const { User } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     const newUser = await User.create({
-      username: req.body.username,
+      username: req.body.email,
       password: req.body.password,
     });
     req.session.save(() => {
       req.session.userId = newUser.id;
-      req.session.username = newUser.username;
+      req.session.email = newUser.email;
       req.session.loggedIn = true;
       res.json(newUser);
     });
@@ -31,6 +31,7 @@ router.post("/login", async (req, res) => {
       return;
     }
     req.session.save(() => {
+      console.log('I got here')
       req.session.userId = user.id;
       req.session.email = user.email;
       req.session.loggedIn = true;
