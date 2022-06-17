@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 3001;
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const sess = {
-    secret: process.env.BCRYPT_KEY,
-    cookie: {},
+    secret: "secret secret secret",
+    cookie: {maxAge: 1000 * 60 * 60 * 24 * 15},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
