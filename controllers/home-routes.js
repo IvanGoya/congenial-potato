@@ -15,16 +15,13 @@ router.get('/', async (req, res) => {
         // }
       ]
     })
-    console.log(bugData);
-    console.log(bugData[0].dataValues.user)
     const bugs = bugData.map((bug) => 
       bug.get({ plain: true })
     )
-    console.log(bugs);
 
     res.render('homepage', {
       bugs,
-      logged_in: req.session.logged_in
+      loggedIn: req.session.loggedIn
     })
   } catch (err) {
     res.status(500).json(err)
