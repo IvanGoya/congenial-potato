@@ -16,5 +16,11 @@
         "post_body": "Test 123",
         "completed": "false",
         "user_id": 3
+    },
+    {
+        "title": "A really long title to showcase that at the end of the title it is an ellipse instead of spilling over and wrapping",
+        "post_body": "Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here.Body of the post goes here. Body of the post goes here.Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here.",
+        "completed": "false",
+        "user_id": 4
     }
 ]

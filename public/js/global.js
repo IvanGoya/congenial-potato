@@ -11,3 +11,6 @@ openModal.addEventListener('click', () => {
 closeModal.addEventListener('click', () => {
     modal.close()
 })
+
+// Format Date logic will go below
+

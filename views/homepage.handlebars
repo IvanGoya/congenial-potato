@@ -3,7 +3,7 @@
     <section class="main-post">
       <div class="post-title">
         <h4 class="post-text title-text">
-          <a href="https://localhost:3001/post/{{{bug.id}}}" class="post-link">
+          <a href="/post/{{{bug.id}}}" class="post-link">
             {{bug.title}}
           </a>
         </h4>
@@ -14,10 +14,15 @@
           {{bug.post_body}}
       </p>
       </div>
-      <p>{{{bug.first_name}}} {{{bug.last_name}}}</p>
+      <p>
+        <a class="name-link" href="/user/{{{bug.user.id}}}">
+        {{{bug.user.first_name}}} {{{bug.user.last_name}}}</a>, {{{bug.createdAt}}}
+      </p>
+      <br>
     </section>
   {{/each}}
   </div>
+  {{#if loggedIn}}
   <dialog class="modal post-modal">
     <br>
     <h2 class="post-modal-text">Create New Post</h2>
@@ -37,4 +42,5 @@
       </div>
     </form>
   </dialog>
+  {{/if}}
       <script src="/js/global.js"></script>

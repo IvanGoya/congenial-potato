@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Post, Comment } = require('../models');
+const session = require('express-session');
 
 router.get('/', async (req, res) => {
   try {
@@ -8,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['first_name', 'last_name']
+          attributes: ['first_name', 'last_name', 'id']
         }
         // {
         //   model: Comment
@@ -18,10 +19,14 @@ router.get('/', async (req, res) => {
     const bugs = bugData.map((bug) => 
       bug.get({ plain: true })
     )
-
+    console.log('---------------BUGS---------------')
+    console.log(bugs)
+    console.log('---------------SESSION---------------')
+    console.log(req.session.userId)
     res.render('homepage', {
       bugs,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId
     })
   } catch (err) {
     res.status(500).json(err)
@@ -31,20 +36,24 @@ router.get('/', async (req, res) => {
 
 router.get('/user/:id', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    const userData = await Post.findAll({
+      include: {
+        model: User,
+        attributes: ['first_name', 'last_name']
+      },
+      where: {
+        user_id: req.params.id
+      }
     });
 
-    const user = userData.get({ plain: true });
-
-    res.render('user', {
-      ...user,
-      loggeIn: req.session.loggeIn
+    const userPosts = userData.map((posts) => posts.get({ plain: true }));
+    console.log('---------------userPosts---------------')
+    console.log(userPosts)
+    const userInfo = userPosts[0].user
+    res.render('profile', {
+      userPosts,
+      userInfo,
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
