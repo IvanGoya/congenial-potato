@@ -12,12 +12,11 @@
 <body>
   <section class="nav">
         <img src='/img/ant.png' class="logo"></img>
-        <h1 class="title">
-        Exterminator
-        </h1>
+        <h1 class="title"><a href="/">Exterminator</a></h1>
         {{#if loggedIn}}
+        <h2> <a class="nav-item" href="/">Home</a></h2>
         <h2><a class='open-button nav-item'>Create Post</a></h2>
-        <h2> <a class="nav-item">My Bugs</a></h2>
+        <h2> <a class="nav-item" href="/user/{{{userId}}}">My Bugs</a></h2>
         <h2> <a class="nav-item">Boards</a></h2>
         <h2><form href="/api/user/logout" class="nav-item" id="logout">Log Out</form></h2>
         {{else}}

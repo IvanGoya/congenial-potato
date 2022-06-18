@@ -1,32 +1,47 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+  <div class='head-container'>
+    <h2 class="name-header"> {{{userInfo.first_name}}} {{{userInfo.last_name}}}'s Post History</h2>
   </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Post:</h3>
-
-    <form class="form new-post-form">
-      <div class="form-group">
-        <label for="post-name">Post Name:</label>
-        <input class="post-input" type="text" id="post-name" name="post-name" />
+ <div class="post-container">
+    {{#each userPosts as |userPost| }}
+    <section class="main-post">
+      <div class="post-title">
+        <h4 class="post-text title-text">
+          <a href="https://localhost:3001/post/{{{userPost.id}}}" class="post-link">
+            {{title}}
+          </a>
+        </h4>
       </div>
-      <div class="form-group">
-        <label for="type">Type:</label>
-        <button onclick="typeFunction()" class="dropbtn">Select</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a>Bug</a>
-            <a>Feature</a>
-            <a>Inquiry</a>
-        </div>
+          </a>
+      <div class="post-body">
+        <p class="post-text">
+          {{post_body}}
+      </p>
       </div>
-      <div class="comment-box">
-        <label for="comment">Summary:</label>
-        <textarea for="summary" class="summary-input" id="summary" name="summary" rows="4" cols="50"></textarea>
+      <h3>{{{userPost.createdAt}}}</h3>
+      <br>
+    </section>
+  {{/each}}
+  </div>
+   {{#if loggedIn}}
+  <dialog class="modal post-modal">
+    <br>
+    <h2 class="post-modal-text">Create New Post</h2>
+    <form class="new-post" method="dialog">
+      <br>
+      <h3 class="post-modal-text">Title</h3>
+      <div>
+        <input class="new-post-item" id="modal-title">
+      </div>
+      <h3 class="post-modal-text">Description</h3>
+      <div>
+        <textarea class="new-post-item" id="modal-desc" onfocus="if (this.value=='Description') this.value = ''" type="text" value="Description"></textarea>
+      </div>
+      <div>
+        <button class="new-post-button" type="submit">Submit</button>
+        <button class="close-button new-post-button">Cancel</button>
       </div>
     </form>
-  </div>
-
-<script src="../public/js/profile.js"></script>
+  </dialog>
+  {{/if}}
+      <script src="/js/global.js"></script>
+<script src="js/profile.js"></script>

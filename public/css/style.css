@@ -45,6 +45,10 @@ h1 {
     
 }
 
+a {
+    text-decoration: none;
+}
+
 button {
     background-color: var(--first-color);
     padding: 3px 5px 3px 5px; 
@@ -91,7 +95,6 @@ button:hover {
     background: none;
     padding: 0;
     color: var(--second-color);
-    text-decoration: none;
     display: block;
 }
 
@@ -250,6 +253,11 @@ button:hover {
     transition: 250ms;
 }
 
+.name-link:hover {
+    color: var(--third-color);
+    transition: 250ms;
+}
+
 .post-modal {
     background-color: var(--first-color);
     color: black;
@@ -306,6 +314,18 @@ button:hover {
     max-height: 320px;
     margin-left: 5%;
 }
+
+.head-container {
+    display: flex;
+    justify-content: center;
+}
+
+.name-header {
+    margin-top: .5rem;
+    color: var(--second-color);
+    font-size: 3rem;
+}
+
 
 @media screen and (max-width: 785px) {
     .logo {
