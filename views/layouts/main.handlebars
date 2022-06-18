@@ -11,21 +11,20 @@
 
 <body>
   <section class="nav">
+        <img src='/img/ant.png' class="logo"></img>
         <h1 class="title">
         Exterminator
         </h1>
-    <img src='/img/brown-ant.png' class="logo">
-        </img>
         {{#if loggedIn}}
         <h2><a class='open-button nav-item'>Create Post</a></h2>
+        <h2> <a class="nav-item">My Bugs</a></h2>
         <h2> <a class="nav-item">Boards</a></h2>
-        <h2><form href="/api/user/logout" class="nav-item" id="logout">LogOut</form></h2>
+        <h2><form href="/api/user/logout" class="nav-item" id="logout">Log Out</form></h2>
         {{else}}
         <h2><a href="/login" class="nav-item">Log In</a></h2>
         {{/if}}
   </section>
   {{{body}}}
-  <script src="/js/global.js"></script>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}

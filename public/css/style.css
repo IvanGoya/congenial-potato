@@ -33,13 +33,15 @@ header {
 h1 {
     color: var(--second-color);
     background-color: var(--third-color);
-    padding: .5rem;
+    padding: .75rem;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 0 10px 10px 0;
     /* box-shadow: 10px 10px 0 5px rgb(0 0 0 / .3); */
     margin-right: auto;
     /* min-height: 2.5rem; */
+    margin-bottom: none;
+    margin-top: none;
     
 }
 
@@ -66,10 +68,9 @@ button:hover {
     justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
-    box-shadow: 0 0 0 .25rem var(--second-color);
+    box-shadow: 0 0 0 .25rem var(--third-color);
     min-height: 2.5rem;
     background-color: var(--first-color);
-    color: var(--second-color);
 }
 
 .nav h2 {
@@ -82,7 +83,7 @@ button:hover {
     border-style: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 350ms;
+    transition: all 350ms ease-in;
 }
 
 .nav-item {
@@ -95,8 +96,10 @@ button:hover {
 }
 
 .logo {
-    max-height: 150px;
-    /* background-color: var(--third-color); */
+    max-height: 59px;
+    margin-right: none;
+    background-color: var(--third-color);
+    padding: 1px;
 }
 
 .blend {
@@ -146,10 +149,11 @@ button:hover {
 .form-group {
     display: flex;
     justify-content: center;
+    margin: 3px;
 }
 
 
-.modal {
+.signup-modal {
     border: none;
     box-shadow: 5px 5px 5px 5px rgb(0 0 0 / .3);
     position: absolute;
@@ -185,7 +189,7 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 }
 
@@ -246,13 +250,70 @@ button:hover {
     transition: 250ms;
 }
 
-@media screen and (max-width: 800px) {
+.post-modal {
+    background-color: var(--first-color);
+    color: black;
+    width: 80%;
+    max-width: 80rem;
+    border: solid;
+    border-color: var(--third-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / .3);
+    margin: 10%;
+}
+
+.new-post-item{
+    color: black;
+    margin: 1em;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.post-modal-text {
+    align-self: center;
+    margin-left: 5%;
+}
+
+.new-post-button {
+    margin-left: 33.3%;
+    margin-bottom: 2%;
+    border: solid;
+    border-color: var(--third-color);
+    background-color: var(--third-color);
+    color: var(--second-color);
+}
+
+.new-post-button:hover {
+    background-color: var(--first-color);
+    color: var(--second-color);
+}
+
+#modal-title {
+    min-height: 3rem;
+    font-size: 2rem;
+    width: 90%;
+    margin-left: 5%
+}
+
+#modal-desc {
+    min-height: 10rem;
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    max-height: 320px;
+    margin-left: 5%;
+}
+
+@media screen and (max-width: 785px) {
     .logo {
         display: none;
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 710px) {
     .title {
         margin: 1rem;
         border-radius: 10px;
@@ -260,5 +321,18 @@ button:hover {
     .nav {
         position: relative;
         flex-direction: column;
+    }
+}
+
+@media screen and  (max-width: 400px) {
+    #modal-title {
+        margin-left: 2%
+    }
+    
+    #modal-desc {
+        margin-left: 2%
+    }
+    .post-modal-text {
+        margin-left: 2%;
     }
 }
