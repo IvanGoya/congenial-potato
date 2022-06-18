@@ -14,7 +14,27 @@
           {{bug.post_body}}
       </p>
       </div>
+      <p>{{{bug.first_name}}} {{{bug.last_name}}}</p>
     </section>
   {{/each}}
   </div>
-      <script src="/js/login.js"></script>
+  <dialog class="modal post-modal">
+    <br>
+    <h2 class="post-modal-text">Create New Post</h2>
+    <form class="new-post" method="dialog">
+      <br>
+      <h3 class="post-modal-text">Title</h3>
+      <div>
+        <input class="new-post-item" id="modal-title">
+      </div>
+      <h3 class="post-modal-text">Description</h3>
+      <div>
+        <textarea class="new-post-item" id="modal-desc" onfocus="if (this.value=='Description') this.value = ''" type="text" value="Description"></textarea>
+      </div>
+      <div>
+        <button class="new-post-button" type="submit">Submit</button>
+        <button class="close-button new-post-button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+      <script src="/js/global.js"></script>
