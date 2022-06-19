@@ -53,7 +53,8 @@ router.get('/user/:id', async (req, res) => {
     res.render('profile', {
       userPosts,
       userInfo,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId
     });
   } catch (err) {
     res.status(500).json(err);
