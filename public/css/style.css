@@ -78,22 +78,20 @@ button:hover {
 }
 
 .nav h2 {
-    transition: all 350ms;
+    transition: all 250ms;
 }
 
 .nav h2:hover {
     background-color: var(--third-color);
-    border:10px;
-    border-style: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
-    transition: all 350ms ease-in;
+    transition: all 250ms ease-in;
 }
 
 .nav-item {
-    margin: 1rem;
+    /* margin: 1rem; */
     background: none;
-    padding: 0;
+    padding: 39px 1rem;
     color: var(--second-color);
     display: block;
 }
@@ -327,13 +325,13 @@ button:hover {
 }
 
 
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 890px) {
     .logo {
         display: none;
     }
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 805px) {
     .title {
         margin: 1rem;
         border-radius: 10px;
@@ -341,6 +339,9 @@ button:hover {
     .nav {
         position: relative;
         flex-direction: column;
+    }
+    .nav-item {
+        padding: 5px 2rem;;
     }
 }
 
