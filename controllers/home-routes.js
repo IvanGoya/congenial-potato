@@ -107,6 +107,8 @@ router.get('/post/:id', async (req,res) => {
 
 
 
+
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.loggedIn) {
