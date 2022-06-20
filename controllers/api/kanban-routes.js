@@ -11,6 +11,7 @@ router.get("/", async (req,res) => {
             ],
         });
         res.status(200).json(kanbanData)
+        console.log(kanbanData)
     }
     catch(err) {
         res.status(400).json(err);
