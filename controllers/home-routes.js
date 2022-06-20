@@ -2,6 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Post, Comment } = require('../models');
 const session = require('express-session');
+const { sequelize } = require('../models/Post');
 
 router.get('/', async (req, res) => {
   try {
@@ -87,20 +88,59 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/post/:id', async (req,res) => {
   try{
-    const postData = await Post.findByPk(req.params.id, {
-      include: [User, {
-        model: 'comment',
-        include: [User]
-      }]
-    })
-    if(postData) {
-      const post = postData.get({ plain: true })
-      res.render('single-post', {post})
+    const postData = await sequelize.query(
+      `SELECT
+      post.id,
+      post.title,
+      post.post_body,
+      post.created_at AS 'post_created_at',
+      postUser.first_name AS 'poster_first',
+      postUser.last_name AS 'poster_last',
+      comment.comment_body,
+      comment.created_at,
+      commentUser.first_name,
+      commentUser.last_name
+
+      FROM post
+      LEFT JOIN comment ON post.id = comment.post_id
+      JOIN user postUser ON post.user_id = postUser.id
+      JOIN user commentUser ON comment.user_id = commentUser.id
+
+      WHERE post.id = ${req.params.id};
+      `)
+  //     {
+  //     include: [
+  //       {
+  //         model: Comment,
+  //         attributes: ['comment_body', 'createdAt'],
+  //         include: [
+  //           {
+  //             model: User,
+  //             attributes: ['first_name', 'last_name']
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         model: User,
+  //         attributes: ['first_name', 'last_name']
+  //       }
+  //   ]
+  // })
+  console.log(postData[0])
+    if(postData[0]) {
+      // const post = postData.get({ plain: true })
+      console.log('---------------POST-------------')
+      const post = postData[0] 
+      // const comments = post.comment
+      res.render('post', {
+        post
+      })
     } else {
       res.status(404).json({message: 'Post Not Found!'})
     }
   }
   catch(err) {
+    console.log('Getting hereeeeeeeeeeeee')
     res.status(500).json(err);
   }
 })
