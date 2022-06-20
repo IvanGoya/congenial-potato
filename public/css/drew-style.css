@@ -26,8 +26,7 @@
 }
 
 .comment-card {
-    background-color: var(--fourth-color);
-    min-height: 15rem;
+    background-color: var(--third-color);
     margin: 1rem;
     border-radius: 10px;
     display: flex;
