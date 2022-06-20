@@ -12,11 +12,22 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.post('/delete', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-        const delPost = await Post.destroy(req.body);
-        res.status(200).json(delPost);
-    } catch (err) {
+        const postData = await Post.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id
+            }
+        });
+
+        if (!postData) {
+            res.status(404).json({ message: 'No post found!' });
+            return;
+        }
+
+        res.status(200).json(postData);
+        } catch (err) {
         res.status(500).json(err);
     }
 });

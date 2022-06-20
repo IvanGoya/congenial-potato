@@ -22,9 +22,21 @@ const newFormHandler = async (event) => {
   };
 
   const deletePostHandler = async (event) => {
-    if (event.target)
-  }
-  
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+
+      const response = await fetch(`/api/post/${id}`, {
+        method: 'DELETE'
+      });
+
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };
+
   document.querySelector('.new-post-button').addEventListener('click', () => {
     newFormHandler();
   });
