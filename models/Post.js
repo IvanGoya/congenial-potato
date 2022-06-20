@@ -18,6 +18,9 @@ Post.init({
         type: DataTypes.TEXT,
         allowNull: false,
     },
+    post_type: {
+        type: DataTypes.STRING
+    },
     completed: {
         type: DataTypes.BOOLEAN,
         allowNull: true
