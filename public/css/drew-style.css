@@ -25,6 +25,18 @@
     max-width: 80rem;
 }
 
+.comment-card {
+    background-color: var(--fourth-color);
+    min-height: 15rem;
+    margin: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 15rem;
+    max-width: 80rem;
+}
+
 .post-title {
     min-height: 3rem;
     background-color: var(--third-color);
