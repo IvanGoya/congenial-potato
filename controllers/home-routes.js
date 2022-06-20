@@ -139,14 +139,14 @@ router.get('/post/:id', async (req,res) => {
         post,
         postTitle,
         postBody,
-        postTime
+        postTime,
+        loggedIn: req.session.loggedIn
       })
     } else {
       res.status(404).json({message: 'Post Not Found!'})
     }
   }
   catch(err) {
-    console.log('Getting hereeeeeeeeeeeee')
     res.status(500).json(err);
   }
 })
