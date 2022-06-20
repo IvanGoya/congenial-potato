@@ -20,6 +20,10 @@ const newFormHandler = async (event) => {
       }
     }
   };
+
+  const deletePostHandler = async (event) => {
+    if (event.target)
+  }
   
   document.querySelector('.new-post-button').addEventListener('click', () => {
     newFormHandler();
