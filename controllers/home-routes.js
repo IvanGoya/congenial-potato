@@ -47,15 +47,19 @@ router.get('/user/:id', async (req, res) => {
     });
 
     const userPosts = userData.map((posts) => posts.get({ plain: true }));
-    console.log('---------------userPosts---------------')
-    console.log(userPosts)
     const userInfo = userPosts[0].user
+    const userPageId = userPosts[0].user_id
+    const loggedUser = req.session.userId
+    console.log(req.session.userId)
     res.render('profile', {
       userPosts,
       userInfo,
+      userPageId,
+      loggedUser,
       loggedIn: req.session.loggedIn,
       userId: req.session.userId
     });
+    
   } catch (err) {
     res.status(500).json(err);
   }
