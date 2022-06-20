@@ -21,9 +21,11 @@
         </p>
       <br>
     </section>
-    
+</div>
+
     {{#each post as |comment| }}
         <section>
+    <div class = "comment-card">
             <div class = "comment-body">  
                     <p class = "comment-text">
                         {{comment.comment_body}} 
@@ -31,9 +33,9 @@
                     <h4>{{comment.created_at}}</h4>
             </div>
         </section>
+    </div>
     {{/each}}
-    
-</div>
+
 
     <script src="/js/profile.js"></script>
     <script src="/js/global.js"></script>
