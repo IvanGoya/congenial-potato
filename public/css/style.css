@@ -236,6 +236,10 @@ button:hover {
     text-overflow: ellipsis;
 }
 
+.comment-box {
+    display: none;
+}
+
 .comment-flex {
     margin-bottom: 1rem;
 }
@@ -299,6 +303,11 @@ button:hover {
 
 .name-link:hover {
     color: var(--third-color);
+    transition: 250ms;
+}
+
+.main-post:hover {
+    color: var(--first-color);
     transition: 250ms;
 }
 
