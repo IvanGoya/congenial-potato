@@ -1,4 +1,4 @@
-<div class="post-container">
+<div class="single-post-container">
 
     <section class="main-post">
          <h4>Posted: {{postTime}}</h4>
@@ -13,28 +13,30 @@
             {{postBody}}
         </p>
       </div>
+      <button class="comment-btn" href="">Comment</button>
         <p>
             <a class="name-link" href="/user/{{{user.id}}}">
             {{poster_first}} {{poster_last}}</a> {{createdAt}}
         </p>
       <br>
     </section>
-</div>
+
 
     {{#each post as |comment| }}
-        <section>
+    <section class = "comment-flex">
     <div class = "comment-container">
-            <div class = "comment-body">  
-               <h1 class = "comment-title">{{first_name}} {{last_name}}</h1> 
-                    <p class = "post-text title-text">
-                        {{comment.comment_body}} 
-                    </p>
-                    <h4>{{comment.created_at}}</h4>
-            </div>
-        </section>
+            <h2 class = "comment-title">{{first_name}} {{last_name}}</h2>
+                <div class = "comment-body">    
+                        <p class = "post-text title-text">
+                            {{comment.comment_body}} 
+                        </p>
+                </div>
+                <h4 class = "created-at">{{comment.created_at}}</h4>
     </div>
+    </section>
     {{/each}}
 
+</div>
 
     <script src="/js/profile.js"></script>
     <script src="/js/global.js"></script>

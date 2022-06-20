@@ -193,16 +193,21 @@ button:hover {
     flex-direction: column-reverse;
     align-items: center;
 }
+.single-post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .comment-container {
-    background-color: var(--first-color);
-    min-height: 15rem;
-    margin-left: 14rem;
+    background-color:#7dc9c4;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 15rem;
-    max-width: 80rem;
+    width: 60rem;
+    
 }
 
 .comment-title {
@@ -214,6 +219,25 @@ button:hover {
     border-radius: 10px;
     font-size: 2rem;
     color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.comment-body {
+    min-height: 3rem;
+    background-color: var(--second-color);
+    width: 95%;
+    margin: 0 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-flex {
+    margin-bottom: 1rem;
 }
 
 .main-post {
@@ -346,6 +370,11 @@ button:hover {
     font-size: 3rem;
 }
 
+.comment-btn {
+    background-color: #051622;
+    border:#051622 solid;
+    border-radius: 5px;
+}
 
 @media screen and (max-width: 890px) {
     .logo {
