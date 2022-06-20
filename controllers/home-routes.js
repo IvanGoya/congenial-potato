@@ -132,8 +132,15 @@ router.get('/post/:id', async (req,res) => {
       console.log('---------------POST-------------')
       const post = postData[0] 
       // const comments = post.comment
+      const postTitle = post[0].title
+      const postBody = post[0].post_body
+      console.log(post)
+      console.log(postTitle)
+      console.log(postBody)
       res.render('post', {
-        post
+        post,
+        postTitle,
+        postBody
       })
     } else {
       res.status(404).json({message: 'Post Not Found!'})
