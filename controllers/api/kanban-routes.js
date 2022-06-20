@@ -4,11 +4,11 @@ const { Kanban } = require("../../models");
 router.get("/", async (req,res) => {
     try {
         const kanbanData = await Kanban.findAll( {
-            // include: [
-            //     {
-            //         model: kanban,
-            //     },
-            // ],
+            include: [
+                {
+                    model: kanban,
+                },
+            ],
         });
         res.status(200).json(kanbanData)
     }
