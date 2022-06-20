@@ -134,13 +134,12 @@ router.get('/post/:id', async (req,res) => {
       // const comments = post.comment
       const postTitle = post[0].title
       const postBody = post[0].post_body
-      console.log(post)
-      console.log(postTitle)
-      console.log(postBody)
+      const postTime = post[0].post_created_at
       res.render('post', {
         post,
         postTitle,
-        postBody
+        postBody,
+        postTime
       })
     } else {
       res.status(404).json({message: 'Post Not Found!'})
@@ -151,10 +150,6 @@ router.get('/post/:id', async (req,res) => {
     res.status(500).json(err);
   }
 })
-
-
-
-
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
