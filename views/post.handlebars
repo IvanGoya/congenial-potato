@@ -1,0 +1,39 @@
+<div class="post-container">
+
+    <section class="main-post">
+      <div class="post-title">
+        <h4>{{{post_created_at}}}</h4>
+        <h4 class="post-text title-text">
+          <a href="/post/{{{id}}}" class="post-link">
+            {{postTitle}}
+          </a>
+        </h4>
+      </div>
+          </a>
+      <div class="post-body">
+            <p class="post-text">
+            {{postBody}}
+        </p>
+      </div>
+        <p>
+            <a class="name-link" href="/user/{{{user.id}}}">
+            {{poster_first}} {{poster_last}}</a>, {{createdAt}}
+        </p>
+      <br>
+    </section>
+    
+    {{#each post as |comment| }}
+        <section>
+            <div class = "comment-body">  
+                    <p class = "comment-text">
+                        {{comment.comment_body}} 
+                    </p>
+                    <h4>{{comment.created_at}}</h4>
+            </div>
+        </section>
+    {{/each}}
+    
+</div>
+
+    <script src="/js/profile.js"></script>
+    <script src="/js/global.js"></script>
