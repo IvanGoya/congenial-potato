@@ -20,7 +20,7 @@ Post.init({
     },
     completed: {
         type: DataTypes.BOOLEAN,
-        allowNull: false
+        allowNull: true
     }
 },
     {
