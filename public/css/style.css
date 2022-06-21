@@ -107,6 +107,13 @@ button:hover {
     background: none;
 }
 
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
