@@ -36,8 +36,8 @@
     </div>
     </section>
 
+    {{#if hasComment}}
     <section class = "comment-flex">
-    {{#if post}}
     {{#each post as |comment| }}
     <div class = "comment-container">
             <h2 class = "comment-title">{{first_name}} {{last_name}}</h2>
@@ -49,8 +49,8 @@
                 <h4 class = "created-at">{{comment.created_at}}</h4>
     </div>
     {{/each}}
-    {{/if}}
     </section>
+    {{/if}}
 
 </div>
 

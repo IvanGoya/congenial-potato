@@ -20,10 +20,6 @@ router.get('/', async (req, res) => {
     const bugs = bugData.map((bug) => 
       bug.get({ plain: true })
     )
-    console.log('---------------BUGS---------------')
-    console.log(bugs)
-    console.log('---------------SESSION---------------')
-    console.log(req.session.userId)
     res.render('homepage', {
       bugs,
       loggedIn: req.session.loggedIn,
@@ -116,7 +112,7 @@ router.get('/post/:id', async (req,res) => {
       FROM post
       LEFT JOIN comment ON post.id = comment.post_id
       JOIN user postUser ON post.user_id = postUser.id
-      JOIN user commentUser ON comment.user_id = commentUser.id
+      LEFT JOIN user commentUser ON comment.user_id = commentUser.id
 
       WHERE post.id = ${req.params.id};
       `)
@@ -146,11 +142,16 @@ router.get('/post/:id', async (req,res) => {
       const postTitle = post[0].title
       const postBody = post[0].post_body
       const postTime = post[0].post_created_at
+      let hasComment = false;
+      if (post[0].comment_body != null) {
+        hasComment = true
+      }
       res.render('post', {
         post,
         postTitle,
         postBody,
         postTime,
+        hasComment,
         loggedIn: req.session.loggedIn,
         userId: req.session.userId
       })
