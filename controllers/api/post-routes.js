@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.post('/', async (req, res) => {
     try {
@@ -12,15 +13,17 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
+        console.log('3');
         const postData = await Post.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id
-            }
+            },
         });
-
+        console.log('4');
+        console.log(postData);
         if (!postData) {
             res.status(404).json({ message: 'No post found!' });
             return;
