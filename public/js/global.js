@@ -5,7 +5,6 @@ const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
 const submitBtn = document.querySelector('#submitBtn');
 const deleteBtn = document.querySelector('#delete-button');
-const commentBtn = document.querySelector('#comment-button');
 
 openModal.addEventListener('click', () => {
     modal.showModal();
@@ -24,7 +23,3 @@ deleteBtn.addEventListener('click', () => {
 })
 
 // Format Date logic will go below
-
-commentBtn.addEventListener('click', () => {
-
-})
