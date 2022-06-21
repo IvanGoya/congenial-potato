@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Post, Comment } = require('../models');
+const { User, Post, Kanban, Comment } = require('../models');
 const session = require('express-session');
 const { sequelize } = require('../models/Post');
 
@@ -150,6 +150,27 @@ router.get('/post/:id', async (req,res) => {
     res.status(500).json(err);
   }
 })
+
+router.get('/board', async (req,res) => {
+  try {
+    console.log('1board')
+    const boardData = await Kanban.findAll({
+      include: [
+        {
+          model: Post,
+          // attributes: ['first_name', 'last_name']
+        },
+      ],
+    });
+    console.log('2board')
+    const boardItems = boardData.map((board) => board.get({ plain: true }));
+    res.render('kanban', {
+      boardItems
+    });
+  } catch(err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
