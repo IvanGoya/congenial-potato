@@ -1,26 +1,30 @@
 [
     {
-        "title": "Bug1",
-        "post_body": "Test text",
+        "title": "Does anyone know why my line of code isn't working?",
+        "post_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur ligula sit amet mauris faucibus, et cursus turpis hendrerit. Praesent fringilla turpis lacus, et feugiat.",
         "completed": "false",
-        "user_id": 1
+        "user_id": 1,
+        "post_type": "Bug"
     },
     {
-        "title": "Bug2",
-        "post_body": "Testing",
+        "title": "Check out this awesome new feature!",
+        "post_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur ligula sit amet mauris faucibus, et cursus turpis hendrerit. Praesent fringilla turpis lacus, et feugiat.        ",
         "completed": "false",
-        "user_id": 2
+        "user_id": 2,
+        "post_type": "Feature"
     },
     {
-        "title": "Bug3",
-        "post_body": "Test 123",
+        "title": "Does anyone know handlebars well enough to help me figure this out?",
+        "post_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur ligula sit amet mauris faucibus, et cursus turpis hendrerit. Praesent fringilla turpis lacus, et feugiat.",
         "completed": "false",
-        "user_id": 3
+        "user_id": 3,
+        "post_type": "Inquiry"
     },
     {
         "title": "A really long title to showcase that at the end of the title it is an ellipse instead of spilling over and wrapping",
-        "post_body": "Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here.Body of the post goes here. Body of the post goes here.Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here. Body of the post goes here.",
+        "post_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur ligula sit amet mauris faucibus, et cursus turpis hendrerit. Praesent fringilla turpis lacus, et feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur ligula sit amet mauris faucibus, et cursus turpis hendrerit. Praesent fringilla turpis lacus, et feugiat.   ",
         "completed": "true",
-        "user_id": 4
+        "user_id": 4,
+        "post_type": "Feature"
     }
 ]
