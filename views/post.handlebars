@@ -26,7 +26,7 @@
             <h2 class = "comment-title">Comment:</h2>
                 <div class = "comment-body">    
                         <p class = "post-text title-text">
-                        <textarea class="new-post-item" id="comment-contents" type = 'text'></textarea>                       
+                        <textarea class="new-comment-item" id="comment-contents" type = 'text'></textarea>                       
                          </p>
                 </div>
                 <div>
@@ -36,8 +36,9 @@
     </div>
     </section>
 
-    {{#each post as |comment| }}
     <section class = "comment-flex">
+    {{#if post}}
+    {{#each post as |comment| }}
     <div class = "comment-container">
             <h2 class = "comment-title">{{first_name}} {{last_name}}</h2>
                 <div class = "comment-body">    
@@ -47,8 +48,9 @@
                 </div>
                 <h4 class = "created-at">{{comment.created_at}}</h4>
     </div>
-    </section>
     {{/each}}
+    {{/if}}
+    </section>
 
 </div>
 

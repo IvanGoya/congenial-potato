@@ -1,4 +1,5 @@
   <div class="post-container">
+    {{#if bugs}}
     {{#each bugs as |bug| }}
     <section class="main-post">
       <div class="post-title">
@@ -21,6 +22,7 @@
       <br>
     </section>
   {{/each}}
+  {{/if}}
   </div>
   {{#if loggedIn}}
   <dialog class="modal post-modal">
