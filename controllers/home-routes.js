@@ -42,20 +42,32 @@ router.get('/user/:id', async (req, res) => {
         user_id: req.params.id
       }
     });
-
-    const userPosts = userData.map((posts) => posts.get({ plain: true }));
-    const userInfo = userPosts[0].user
-    const userPageId = userPosts[0].user_id
-    const loggedUser = req.session.userId
-    console.log(req.session.userId)
-    res.render('profile', {
-      userPosts,
-      userInfo,
-      userPageId,
-      loggedUser,
-      loggedIn: req.session.loggedIn,
-      userId: req.session.userId
-    });
+    let hasPosts = true
+    console.log(userData)
+    if (userData[0]) {
+      console.log('Getting to true')
+      const userPosts = userData.map((posts) => posts.get({ plain: true }));
+      const userInfo = userPosts[0].user
+      const userPageId = userPosts[0].user_id
+      const loggedUser = req.session.userId
+      res.render('profile', {
+        hasPosts,
+        userPosts,
+        userInfo,
+        userPageId,
+        loggedUser,
+        loggedIn: req.session.loggedIn,
+        userId: req.session.userId
+      });
+    } else {
+      console.log('getting here')
+      hasPosts = false;
+      res.render('profile', {
+        hasPosts,
+        loggedIn: req.session.loggedIn,
+        userId: req.session.userId
+      })
+    }
     
   } catch (err) {
     res.status(500).json(err);
