@@ -24,7 +24,3 @@ deleteBtn.addEventListener('click', () => {
 })
 
 // Format Date logic will go below
-
-commentBtn.addEventListener('click', () => {
-
-})
