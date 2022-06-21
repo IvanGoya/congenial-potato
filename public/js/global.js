@@ -12,17 +12,30 @@ closeModal.addEventListener('click', () => {
     modal.close();
 });
 
+function getRadio() {
+  console.log('getting here')
+  const radioOptions = document.getElementsByName('type');
+  console.log(radioOptions)
+  for(let i=0; radioOptions.length > i; i++) {
+    if(radioOptions[i].checked) {
+      return radioOptions[i].value;
+    }
+  }
+  return;
+}
+
+
 const newFormHandler = async (event) => {
     // event.preventDefault();
+    
+    let post_type = getRadio() 
+    console.log(post_type)
   
     const title = document.querySelector('#modal-title').value.trim();
     const post_body = document.querySelector('#modal-desc').value.trim();
-    const post_type = document.querySelector('.modal-type').value
     const completed = false;
 
-    console.log(post_type)
     if (title && post_body && post_type) {
-      console.log(post_type)
       const response = await fetch(`/api/post`, {
         method: 'POST',
         body: JSON.stringify({ title, post_body, post_type, completed }),

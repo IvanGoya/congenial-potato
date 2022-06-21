@@ -1,19 +1,27 @@
 <div class="single-post-container">
+    {{#if loggedIn}}
+    <form>
+        <button id="complete-button"{{#if completed}} class="completed-btn" value="complete">
+            {{else}}  class="incomplete-btn" value="incomplete">
+        {{/if}}
+        </button>
 
+    </form>
+    {{/if}}
     <section class="main-post">
          <h4>Posted: {{postTime}}</h4>
       <div class="post-title">
-        <h4 class="post-text title-text">
+        <h4 class="post-text single-post-text">
             {{postTitle}}
         </h4>
       </div>
           </a>
       <div class="post-body">
-            <p class="post-text">
+            <p class="post-text single-post-text">
             {{postBody}}
         </p>
       </div>
-      <button class="comment-btn" id="comment-btn">Comment</button>
+      {{#if loggedIn}}<button class="comment-btn" id="comment-btn">Comment</button>{{/if}}
         <p>
             <a class="name-link" href="/user/{{{user.id}}}">
             {{poster_first}} {{poster_last}}</a> {{createdAt}}
@@ -42,7 +50,7 @@
     <div class = "comment-container">
             <h2 class = "comment-title">{{first_name}} {{last_name}}</h2>
                 <div class = "comment-body">    
-                        <p class = "post-text title-text">
+                        <p class = "post-text">
                             {{comment.comment_body}} 
                         </p>
                 </div>
@@ -50,9 +58,49 @@
     </div>
     {{/each}}
     </section>
+    {{else}}
+    <br>
+    <br>
+    <br>
     {{/if}}
 
 </div>
+
+{{#if loggedIn}}
+
+<dialog class="modal post-modal">
+    <br>
+    <h2 class="post-modal-text">Create New Post</h2>
+    <form class="new-post" method="dialog">
+      <br>
+      <h3 class="post-modal-text">Type</h3>
+      <div class="new-radio-buttons">
+        <div>
+          <input name="type" type="radio" class="new-radio-item modal-type" value="Bug"> Bug</input>
+        </div>
+        <div>
+          <input name="type" type="radio" class="new-radio-item modal-type" value="Feature"> Feature</input>
+        </div>
+        <div>
+          <input name="type" type="radio" class="new-radio-item modal-type" value="Inquiry"> Inquiry</input>
+        </div>
+      </div>
+      <h3 class="post-modal-text">Title</h3>
+      <div>
+        <input class="new-post-item" id="modal-title">
+      </div>
+      <h3 class="post-modal-text">Description</h3>
+      <div>
+        <textarea class="new-post-item" id="modal-desc" onfocus="if (this.value=='Description') this.value = ''" type="text" value="Description"></textarea>
+      </div>
+      <div>
+        <button class="new-post-button" type="submit">Submit</button>
+        <button class="close-button new-post-button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  {{/if}}
 
     <script src="/js/post.js"></script>
     <script src="/js/createComments.js"></script>

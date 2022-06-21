@@ -142,7 +142,7 @@ button:hover {
     background-color: var(--third-color);
     border: solid;
     border-color: var(--first-color);
-    max-width: 18rem;
+    width: 15rem;
     padding: 1rem;
     border-radius: 5px;
 }
@@ -159,6 +159,7 @@ button:hover {
     box-shadow: 5px 5px 5px 5px rgb(0 0 0 / .3);
     margin: auto auto;
     border-radius: 5px;
+    min-width: 10rem;
 }
 
 .signup-button {
@@ -196,21 +197,29 @@ button:hover {
     flex-direction: column;
     align-items: center;
 }
+
+.single-post-text {
+    white-space: wrap;
+    overflow-wrap: break-word;
+    max-height: none;
+}
+
 .comment-container {
     background-color:#7dc9c4;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60rem;
+    width: 75%;
+    max-width: 75rem;
     margin-bottom: 1rem;
 }
 
 .comment-title {
     min-height: 3rem;
     background-color: var(--third-color);
-    width: 40%;
-    height: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 1rem;
     border-radius: 10px;
     font-size: 2rem;
@@ -238,8 +247,10 @@ button:hover {
 }
 
 .comment-flex {
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
 }
@@ -352,7 +363,7 @@ button:hover {
 }
 
 .new-post-button {
-    margin-left: 33.3%;
+    margin-left: 5%;
     margin-bottom: 2%;
     border: solid;
     border-color: var(--third-color);
@@ -398,6 +409,43 @@ button:hover {
     border:#051622 solid;
     border-radius: 5px;
 }
+
+.completed-btn {
+    font-size: x-large;
+    background-color: limegreen;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.completed-btn:after {
+    content: 'COMPLETE';
+}
+
+.completed-btn:hover:after {
+    border: none;
+    color: white;
+    background-color: red;
+    content: 'Mark Incomplete?';
+}
+
+.incomplete-btn {
+    font-size: x-large;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.incomplete-btn:after {
+    content: 'INCOMPLETE';
+}
+
+.incomplete-btn:hover:after {
+    border: none;
+    color: white;
+    background-color: limegreen;
+    content: 'Mark Complete?';
+}
+
 
 textarea {
     border: none;
