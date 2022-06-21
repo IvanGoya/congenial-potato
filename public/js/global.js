@@ -19,6 +19,7 @@ submitBtn.addEventListener('click', () => {
 })
 
 deleteBtn.addEventListener('click', () => {
+    console.log('delete-button');
     deletePostHandler();
 })
 

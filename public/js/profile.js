@@ -22,9 +22,10 @@ const newFormHandler = async (event) => {
   };
 
   const deletePostHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-
+    console.log('1');
+    if (event.target.hasAttribute('data_id')) {
+      const id = event.target.getAttribute('data_id');
+      console.log('2');
       const response = await fetch(`/api/post/${id}`, {
         method: 'DELETE'
       });
