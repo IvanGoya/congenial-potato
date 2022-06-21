@@ -4,12 +4,14 @@ const newFormHandler = async (event) => {
     const title = document.querySelector('#modal-title').value.trim();
     const post_body = document.querySelector('#modal-desc').value.trim();
     const post_type = document.querySelector('.modal-type').value
+    const completed = false;
 
     console.log(post_type)
     if (title && post_body && post_type) {
+      console.log(post_type)
       const response = await fetch(`/api/post`, {
         method: 'POST',
-        body: JSON.stringify({ title, post_body, post_type }),
+        body: JSON.stringify({ title, post_body, post_type, completed }),
         headers: {
           'Content-Type': 'application/json',
         },
