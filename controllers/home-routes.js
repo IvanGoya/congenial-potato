@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Post, Comment, Kanban } = require('../models');
+const { User, Post, Kanban, Comment } = require('../models');
 const session = require('express-session');
 const { sequelize } = require('../models/Post');
 
@@ -151,16 +151,18 @@ router.get('/post/:id', async (req,res) => {
   }
 })
 
-router.get('/board', (req,res) => {
+router.get('/board', async (req,res) => {
   try {
-    const boardData = await Kanban.findAll( {
+    console.log('1board')
+    const boardData = await Kanban.findAll({
       include: [
         {
-          model: User,
-          attributes: ['first_name', 'last_name'],
-        }
-      ]
+          model: Post,
+          // attributes: ['first_name', 'last_name']
+        },
+      ],
     });
+    console.log('2board')
     const boardItems = boardData.map((board) => board.get({ plain: true }));
     res.render('kanban', {
       boardItems
