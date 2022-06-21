@@ -18,7 +18,7 @@
       </p>
       </div>
       <h3>{{{userPost.createdAt}}}</h3>
-      <button class="comment-btns" data-id="{{userPost.id}}" id="delete-button">Delete</button>
+      <button class="comment-btns delete-button" data-id="{{userPost.id}}">Delete</button>
       <br>
     </section>
   {{/each}}
@@ -44,5 +44,6 @@
     </form>
   </dialog>
   {{/if}}
-      <script src="/js/global.js"></script>
-      <script src="js/profile.js"></script>
+  <script src="/js/profile.js"></script>
+  <script src="/js/global.js"></script>
+      

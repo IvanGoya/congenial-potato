@@ -1,3 +1,7 @@
+const submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('click', () => {
+  signupFormHandler();
+});
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -42,6 +46,7 @@ const loginFormHandler = async (event) => {
       }
     }
   };
+  
   
   document.addEventListener('submit', loginFormHandler);
   
