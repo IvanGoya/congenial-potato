@@ -26,10 +26,11 @@
             <h2 class = "comment-title">Comment:</h2>
                 <div class = "comment-body">    
                         <p class = "post-text title-text">
-                        <textarea class="new-post-item" id="modal-desc" onfocus="if (this.value=='Description') this.value = ''" type="text" value="Description"></textarea>                        </p>
+                        <textarea class="new-post-item" id="comment-contents" type = 'text'></textarea>                       
+                         </p>
                 </div>
                 <div>
-                      <button class="comment-btn" type="submit">Submit</button>
+                      <button id="submit-comment" class="comment-btn" type="submit">Submit</button>
                      <button id="cancel-btn" class="close-button comment-btn">Cancel</button>
                  </div>
     </div>
@@ -52,3 +53,5 @@
 </div>
 
     <script src="/js/post.js"></script>
+    <script src="/js/createComments.js"></script>
+    <script src="/js/global.js"></script>
