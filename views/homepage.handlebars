@@ -2,6 +2,13 @@
     {{#if bugs}}
     {{#each bugs as |bug| }}
     <section class="main-post">
+      {{#if completed}}
+        <br>
+        <h3>Completed
+      {{else}}
+        <br>
+        <h3>Incomplete
+      {{/if}} {{post_type}}</h3>
       <div class="post-title">
         <h4 class="post-text title-text">
           <a href="/post/{{{bug.id}}}" class="post-link">

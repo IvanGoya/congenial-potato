@@ -1,15 +1,23 @@
 <div class="single-post-container">
+    {{#if loggedIn}}
+    <form>
+        <button id="complete-button"{{#if completed}} class="completed-btn" value="complete">
+            {{else}}  class="incomplete-btn" value="incomplete">
+        {{/if}}
+        </button>
 
+    </form>
+    {{/if}}
     <section class="main-post">
          <h4>Posted: {{postTime}}</h4>
       <div class="post-title">
-        <h4 class="post-text title-text">
+        <h4 class="post-text single-post-text">
             {{postTitle}}
         </h4>
       </div>
           </a>
       <div class="post-body">
-            <p class="post-text">
+            <p class="post-text single-post-text">
             {{postBody}}
         </p>
       </div>
@@ -42,7 +50,7 @@
     <div class = "comment-container">
             <h2 class = "comment-title">{{first_name}} {{last_name}}</h2>
                 <div class = "comment-body">    
-                        <p class = "post-text title-text">
+                        <p class = "post-text">
                             {{comment.comment_body}} 
                         </p>
                 </div>
@@ -50,6 +58,10 @@
     </div>
     {{/each}}
     </section>
+    {{else}}
+    <br>
+    <br>
+    <br>
     {{/if}}
 
 </div>

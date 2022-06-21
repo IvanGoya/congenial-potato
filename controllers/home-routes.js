@@ -12,14 +12,9 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['first_name', 'last_name', 'id']
         }
-        // {
-        //   model: Comment
-        // }
       ]
     })
-    const bugs = bugData.map((bug) => 
-      bug.get({ plain: true })
-    )
+    const bugs = bugData.map((bug) => bug.get({ plain: true }))
     res.render('homepage', {
       bugs,
       loggedIn: req.session.loggedIn,
@@ -43,9 +38,7 @@ router.get('/user/:id', async (req, res) => {
       }
     });
     let hasPosts = true
-    console.log(userData)
     if (userData[0]) {
-      console.log('Getting to true')
       const userPosts = userData.map((posts) => posts.get({ plain: true }));
       const userInfo = userPosts[0].user
       const userPageId = userPosts[0].user_id
@@ -60,7 +53,6 @@ router.get('/user/:id', async (req, res) => {
         userId: req.session.userId
       });
     } else {
-      console.log('getting here')
       hasPosts = false;
       res.render('profile', {
         hasPosts,
@@ -74,26 +66,6 @@ router.get('/user/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: user }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.get('/post/:id', async (req,res) => {
   try{
     const postData = await sequelize.query(
@@ -101,6 +73,7 @@ router.get('/post/:id', async (req,res) => {
       post.id,
       post.title,
       post.post_body,
+      post.completed,
       post.created_at AS 'post_created_at',
       postUser.first_name AS 'poster_first',
       postUser.last_name AS 'poster_last',
@@ -134,7 +107,6 @@ router.get('/post/:id', async (req,res) => {
   //       }
   //   ]
   // })
-  console.log(postData[0])
     if(postData[0]) {
       // const post = postData.get({ plain: true })
       const post = postData[0] 
@@ -142,6 +114,7 @@ router.get('/post/:id', async (req,res) => {
       const postTitle = post[0].title
       const postBody = post[0].post_body
       const postTime = post[0].post_created_at
+      const completed = (post[0].completed == 1)
       let hasComment = false;
       if (post[0].comment_body != null) {
         hasComment = true
@@ -152,6 +125,7 @@ router.get('/post/:id', async (req,res) => {
         postBody,
         postTime,
         hasComment,
+        completed,
         loggedIn: req.session.loggedIn,
         userId: req.session.userId
       })
@@ -166,7 +140,6 @@ router.get('/post/:id', async (req,res) => {
 
 router.get('/board', async (req,res) => {
   try {
-    console.log('1board')
     const boardData = await Kanban.findAll({
       include: [
         {
@@ -175,7 +148,6 @@ router.get('/board', async (req,res) => {
         },
       ],
     });
-    console.log('2board')
     const boardItems = boardData.map((board) => board.get({ plain: true }));
     res.render('kanban', {
       boardItems
