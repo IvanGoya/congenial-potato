@@ -13,7 +13,7 @@
             {{postBody}}
         </p>
       </div>
-      <button class="comment-btn" id="comment-button">Comment</button>
+      <button class="comment-btn" id="comment-btn">Comment</button>
         <p>
             <a class="name-link" href="/user/{{{user.id}}}">
             {{poster_first}} {{poster_last}}</a> {{createdAt}}
@@ -21,7 +21,7 @@
       <br>
     </section>
    
-    <section id="comment-btn" class="comment-box">
+    <section id="comment-box" class="comment-box">
         <div class = "comment-container">
             <h2 class = "comment-title">Comment:</h2>
                 <div class = "comment-body">    
@@ -30,7 +30,7 @@
                 </div>
                 <div>
                       <button class="comment-btn" type="submit">Submit</button>
-                     <button class="close-button comment-btn">Cancel</button>
+                     <button id="cancel-btn" class="close-button comment-btn">Cancel</button>
                  </div>
     </div>
     </section>
@@ -51,5 +51,4 @@
 
 </div>
 
-    <script src="/js/profile.js"></script>
-    <script src="/js/global.js"></script>
+    <script src="/js/post.js"></script>
