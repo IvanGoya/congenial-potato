@@ -151,7 +151,8 @@ router.get('/post/:id', async (req,res) => {
         postTitle,
         postBody,
         postTime,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        userId: req.session.userId
       })
     } else {
       res.status(404).json({message: 'Post Not Found!'})
