@@ -1,7 +1,9 @@
+{{#if hasPosts}}
   <div class='head-container'>
     <h2 class="name-header"> {{{userInfo.first_name}}} {{{userInfo.last_name}}}'s Post History</h2>
   </div>
  <div class="post-container">
+  {{#if hasPosts}}
     {{#each userPosts as |userPost| }}
     <section class="main-post">
       <div class="post-title">
@@ -22,6 +24,7 @@
       <br>
     </section>
   {{/each}}
+  {{/if}}
   </div>
    {{#if loggedIn}}
   <dialog class="modal post-modal">
@@ -44,6 +47,30 @@
     </form>
   </dialog>
   {{/if}}
+{{else}}
+  <br>
+  <h2>You haven't made any posts yet, check back here when you have posted something to see it</h2>
+  <br>
+    <dialog class="modal post-modal">
+    <br>
+    <h2 class="post-modal-text">Create New Post</h2>
+    <form class="new-post" method="dialog">
+      <br>
+      <h3 class="post-modal-text">Title</h3>
+      <div>
+        <input class="new-post-item" id="modal-title">
+      </div>
+      <h3 class="post-modal-text">Description</h3>
+      <div>
+        <textarea class="new-post-item" id="modal-desc" onfocus="if (this.value=='Description') this.value = ''" type="text" value="Description"></textarea>
+      </div>
+      <div>
+        <button class="new-post-button" type="submit">Submit</button>
+        <button class="close-button new-post-button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+{{/if}}
   <script src="/js/profile.js"></script>
   <script src="/js/global.js"></script>
       
