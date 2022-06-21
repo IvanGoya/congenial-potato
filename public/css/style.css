@@ -277,6 +277,7 @@ button:hover {
 
 .post-text {
     color: black;
+    margin: 1rem;
 }
 
 .title-text {
@@ -387,6 +388,11 @@ button:hover {
     background-color: #051622;
     border:#051622 solid;
     border-radius: 5px;
+}
+
+textarea {
+    border: none;
+    outline: none;
 }
 
 @media screen and (max-width: 890px) {

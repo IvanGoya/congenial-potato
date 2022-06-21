@@ -1,9 +1,10 @@
+const submitComment = document.querySelector('#submit-comment')
 const newComment = async(event) => {
+    
     event.preventDefault();
-
-    const comment_body = document.querySelector('#commentContent').value.trim()
+    const comment_body = document.querySelector('#comment-contents').value.trim()
     const postId = window.location.toString().split('/')[window.location.toString().split('/').length - 1 ];
-
+    console.log(JSON.stringify({comment_body, postId}))
     if (comment_body) {
         const res = await fetch('/api/comment/', {
             method: 'POST',
@@ -19,4 +20,4 @@ const newComment = async(event) => {
     }
 };
 
-document.addEventListener('submit', newComment)
+document.querySelector("#submit-comment").addEventListener('click', newComment)
