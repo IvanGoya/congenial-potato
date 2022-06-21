@@ -21,5 +21,3 @@ submitBtn.addEventListener('click', () => {
 deleteBtn.addEventListener('click', () => {
     deletePostHandler();
 })
-
-// Format Date logic will go below

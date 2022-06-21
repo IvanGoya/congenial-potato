@@ -5,7 +5,7 @@ const kanbanBoard = async(event) => {
     const postId = window.location.toString().split('/')[window.location.toString().split('/').length - 1 ];
 
     if (kanban_body) {
-        const res = await fetch('/api/kanban/', {
+        const res = await fetch('/api/kanban-routes/', {
             method: 'POST',
             body: JSON.stringify({kanban_body, postId}),
             headers: {'Content-Type': 'application/json'}
