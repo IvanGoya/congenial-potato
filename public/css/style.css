@@ -203,7 +203,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     width: 60rem;
-    
+    margin-bottom: 1rem;
 }
 
 .comment-title {
@@ -230,6 +230,11 @@ button:hover {
     border-radius: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.comment-box {
+    display: none;
+    padding-bottom: 1rem;
 }
 
 .comment-flex {
@@ -271,7 +276,6 @@ button:hover {
 }
 
 .post-text {
-    margin: .5rem;
     color: black;
 }
 
@@ -295,6 +299,11 @@ button:hover {
 
 .name-link:hover {
     color: var(--third-color);
+    transition: 250ms;
+}
+
+.main-post:hover {
+    color: var(--first-color);
     transition: 250ms;
 }
 
