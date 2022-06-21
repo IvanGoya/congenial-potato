@@ -3,7 +3,6 @@ const { Comment } = require("../../models");
 //const withAuth = require('../../utils/auth');
 
 router.post("/", async (req,res) => {
-    console.log("what going on")
     try {
         const newComment = await Comment.create( {
             comment_body: req.body.comment_body,
